@@ -1,0 +1,9 @@
+{% extends "base.html" %} {%block main %}
+<h1>Contact Form</h1>
+<hr>
+<p>Fill in this form to contact the site owners</p>
+<form method="POST" action="{{url_for('contact')}}">
+    {{Myform.csrf_token}} {{Myform.name.label}}
+
+</form>
+{%endblock%}
