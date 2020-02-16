@@ -2,8 +2,26 @@
 <h1>Contact Form</h1>
 <hr>
 <p>Fill in this form to contact the site owners</p>
-<form method="POST" action="{{url_for('contact')}}">
-    {{Myform.csrf_token}} {{Myform.name.label}}
-
+<form method="POST" action="{{url_for('contact')}}" ">
+    {{form.csrf_token}}
+    <div>
+        {{form.name.label}}
+        <p>Please enter your full name</p>{{form.name}}
+    </div>
+    <div>
+        {{form.email.label}}
+        <p>please enater your e-mail address</p> {{form.email}}
+    </div>
+    <div>
+        {{form.subject.label}}
+        <p>Pleas enter the subject for your message</p>
+        {{form.subject}}
+    </div>
+    <div>
+        {{form.message.label}}
+        <p>Pleas enter the subject for your message</p>
+        {{form.message}}
+    </div>
+    <button type="submit ">Submit</button>
 </form>
 {%endblock%}
